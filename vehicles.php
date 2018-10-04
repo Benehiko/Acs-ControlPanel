@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿<?php
+session_start();
+
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -39,7 +44,7 @@
 
         <header class="main-header">
             <!-- Logo -->
-            <a href="dashboard.html" class="logo"><b>ACS</b></a>
+            <a href="index.php" class="logo"><b>ACS</b></a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
@@ -93,10 +98,10 @@
                 <ul class="sidebar-menu">
                     <li class="header">MAIN NAVIGATION</li>
 
-                    <li><a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                    <li><a href="vehicles.html"><i class="fa fa-wheelchair"></i> Vehicles</a></li>
-                    <li><a href="users.html"><i class="fa fa-users"></i> Users</a></li>
-                    <li><a href="devices.html"><i class="fa fa-mobile"></i> Devices</a></li>
+                    <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li><a href="vehicles.php"><i class="fa fa-wheelchair"></i> Vehicles</a></li>
+                    <li><a href="users.php"><i class="fa fa-users"></i> Users</a></li>
+                    <li><a href="devices.php"><i class="fa fa-mobile"></i> Devices</a></li>
 
                 </ul>
             </section>
@@ -149,25 +154,25 @@
                                 <h3 class="box-title">Add Vehicles</h3>
                             </div><!-- /.box-header -->
                             <!-- form start -->
-                            <form role="form">
+                            <form id="vehiclesForm" role="form" action="phpscripts/addvehicle.php" method="post">
                                 <div class="box-body">
                                     <div class="form-group">
                                         <label>Registration</label>
-                                        <input type="text" class="form-control" placeholder="Registration">
+                                        <input id="registration" type="text" name="registration" class="form-control" placeholder="Registration">
                                     </div>
                                     <div class="form-group">
                                         <label>Color</label>
-                                        <input type="text" class="form-control" placeholder="Color">
+                                        <input id="color" type="text" name="color" class="form-control" placeholder="Color">
                                     </div>
                                     <div class="form-group">
                                         <label>Model</label>
-                                        <input type="text" class="form-control" placeholder="Model">
+                                        <input id="model" type="text" name="model" class="form-control" placeholder="Model">
                                     </div>
 
                                 </div><!-- /.box-body -->
 
                                 <div class="box-footer">
-                                    <button type="submit" class="btn btn-primary">Add</button>
+                                    <button id="add-vehicle" type="submit" class="btn btn-primary">Add</button>
                                 </div>
                             </form>
                         </div>
@@ -219,6 +224,9 @@
         <script src="dist/js/pages/dashboard.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="dist/js/demo.js" type="text/javascript"></script>
+        <script src="jQuery/postData.js" type="text/javascript"></script>
+        <script src="jQuery/checklogin.js" type="text/javascript"></script>
+        <script src="jQuery/logout.js" type="text/javascript"></script>
     </div>
 </body>
 </html>

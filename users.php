@@ -1,8 +1,13 @@
-﻿<!DOCTYPE html>
+﻿<?php
+session_start();
+?>
+
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Users</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -36,9 +41,10 @@
 </head>
 <body class="skin-blue">
     <div class="wrapper">
+
         <header class="main-header">
             <!-- Logo -->
-            <a href="dashboard.html" class="logo"><b>ACS</b></a>
+            <a href="index.php" class="logo"><b>ACS</b></a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
@@ -87,15 +93,15 @@
                         <p>Alexander Pierce</p>
                     </div>
                 </div>
-               
+
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
                     <li class="header">MAIN NAVIGATION</li>
 
-                    <li><a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                    <li><a href="vehicles.html"><i class="fa fa-wheelchair"></i> Vehicles</a></li>
-                    <li><a href="users.html"><i class="fa fa-users"></i> Users</a></li>
-                    <li><a href="devices.html"><i class="fa fa-mobile"></i> Devices</a></li>
+                    <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li><a href="vehicles.php"><i class="fa fa-wheelchair"></i> Vehicles</a></li>
+                    <li><a href="users.php"><i class="fa fa-users"></i> Users</a></li>
+                    <li><a href="devices.php"><i class="fa fa-mobile"></i> Devices</a></li>
 
                 </ul>
             </section>
@@ -106,121 +112,78 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Dashboard
+                    Users
                 </h1>
-                
+
             </section>
             <!-- Main content -->
             <section class="content">
-                <!-- Small boxes (Stat box) -->
-                <div class="row">
-                    <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                        <div class="small-box bg-green">
-                            <div class="inner">
-                                <h3>53<sup style="font-size: 20px">%</sup></h3>
-                                <p>Hit Rate</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-stats-bars"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                        <div class="small-box bg-red">
-                            <div class="inner">
-                                <h3>65</h3>
-                                <p>Number of cars</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-pie-graph"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- /.row -->
                 <div class="row">
                     <div class="col-md-6">
+                        <div class="box box-warning">
+                            <div class="box-header">
+                                <h3 class="box-title">Search Users</h3>
+                            </div><!-- /.box-header -->
+                            <!-- form start -->
+                            <form role="form">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label >ID#</label>
+                                        <input type="text" class="form-control" placeholder="ID#">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Surname</label>
+                                        <input type="text" class="form-control" placeholder="Surname">
+                                    </div>
 
-                        <div class="col-xs-12">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3 class="box-title">Cars Going In</h3>
-
-                                </div><!-- /.box-header -->
-                                <div class="box-body table-responsive no-padding">
-                                    <table class="table table-hover">
-                                        <tbody>
-                                            <tr>
-                                                <th>Reg #</th>
-                                                <th>Gate #</th>
-                                            </tr>
-                                            <tr>
-                                                <td>CYN 016 L</td>
-                                                <td>2</td>
-                                            </tr>
-                                            <tr>
-                                                <td>CYN 016 L</td>
-                                                <td>2</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </div><!-- /.box-body -->
-                            </div><!-- /.box -->
+
+                                <div class="box-footer">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </form>
                         </div>
-
-
                     </div>
                     <div class="col-md-6">
+                        <div class="box box-danger">
+                            <div class="box-header">
+                                <h3 class="box-title">Add Users</h3>
+                            </div><!-- /.box-header -->
+                            <!-- form start -->
+                            <form id="usersForm" action="phpscripts/adduser.php" role="form" method="post">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label>ID#</label>
+                                        <input id="id" type="text" name="id" class="form-control" placeholder="ID#">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input id="name" type="text" name="name" class="form-control" placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Surname</label>
+                                        <input id="surname" type="text" name="surname" class="form-control" placeholder="Surname">
+                                    </div>
 
-                        <div class="col-xs-12">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3 class="box-title">Cars Going Out</h3>
-
-                                </div><!-- /.box-header -->
-                                <div class="box-body table-responsive no-padding">
-                                    <table class="table table-hover">
-                                        <tbody>
-                                            <tr>
-                                                <th>Reg #</th>
-                                                <th>Gate #</th>
-                                            </tr>
-                                            <tr>
-                                                <td>CYN 016 L</td>
-                                                <td>2</td>
-                                            </tr>
-                                            <tr>
-                                                <td>CYN 016 L</td>
-                                                <td>2</td>
-                                            </tr>
-                                            <tr>
-                                                <td>CYN 016 L</td>
-                                                <td>2</td>
-                                            </tr>
-                                            <tr>
-                                                <td>CYN 016 L</td>
-                                                <td>2</td>
-                                            </tr>
-                                            <tr>
-                                                <td>CYN 016 L</td>
-                                                <td>2</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </div><!-- /.box-body -->
-                            </div><!-- /.box -->
+
+                                <div class="box-footer">
+                                    <button id="add-user" type="submit" class="btn btn-primary">Add</button>
+                                </div>
+                            </form>
                         </div>
-
-
                     </div>
-                </div><!-- /.row -->
+                </div>
 
-            </section><!-- /.content -->
+            </section>
+
         </div><!-- /.content-wrapper -->
 
     </div><!-- ./wrapper -->
-
     <!-- Scripts -->
     <div>
         <!-- jQuery 2.1.3 -->
@@ -261,6 +224,9 @@
         <script src="dist/js/pages/dashboard.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="dist/js/demo.js" type="text/javascript"></script>
+        <script src="jQuery/postData.js" type="text/javascript"></script>
+        <script src="jQuery/checklogin.js" type="text/javascript"></script>
+        <script src="jQuery/logout.js" type="text/javascript"></script>
     </div>
 </body>
 </html>
