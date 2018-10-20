@@ -11,11 +11,12 @@ $("#loginForm").on("submit", function(e){
                 password: $("#password").val()
             },
             success: function(msg){
-                if (msg == "true"){
+                console.log(msg);
+                if (msg == "1"){
                     $("#loginForm").trigger('reset');
                     $("#modal-login").modal();
                     setTimeout(function(){
-                        window.location.replace("http://192.168.122.5");
+                        window.location.replace("http://192.168.1.108");
                     },2000);
                 }else{
                     $("#loginForm").trigger('reset');
