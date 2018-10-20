@@ -26,7 +26,8 @@ session_start();
     <!-- iCheck -->
     <link href="plugins/iCheck/flat/blue.css" rel="stylesheet" type="text/css"/>
     <!-- Morris chart -->
-    <link href="plugins/morris/morris.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <!--<link href="plugins/morris/morris.css" rel="stylesheet" type="text/css"/>-->
     <!-- jvectormap -->
     <link href="plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css"/>
     <!-- Date Picker -->
@@ -242,9 +243,14 @@ session_start();
         </script>
         <!-- Bootstrap 3.3.2 JS -->
         <!--<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>-->
+
+
         <!-- Morris.js charts -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
         <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>-->
-        <script src="plugins/morris/morris.min.js" type="text/javascript"></script>
+        <!--<script src="plugins/morris/morris.min.js" type="text/javascript"></script>-->
+
         <!-- Sparkline -->
         <script src="plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
         <!-- jvectormap -->
