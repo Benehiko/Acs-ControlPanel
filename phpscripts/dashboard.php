@@ -27,10 +27,10 @@ curl_setopt_array($curl, array(
 $devices = curl_exec($curl);
 
 curl_close($curl);
-if ($devices and $vehicles !== FALSE){
+if ($devices !== FALSE && $vehicles !== FALSE){
     $data = array(
-        "devices" => $devices,
-        "vehicles" => $vehicles
+        'devices' => $devices,
+        'vehicles' => $vehicles
     );
     echo json_encode($data);
 }else{

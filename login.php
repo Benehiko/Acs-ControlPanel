@@ -12,8 +12,10 @@ $token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
     <meta charset="UTF-8">
     <title>Users</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.2 -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Bootstrap 3.3.2
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- FontAwesome 4.3.0 -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
           type="text/css"/>
@@ -35,7 +37,7 @@ $token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
     <!-- Daterange picker -->
     <link href="plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>
     <!-- bootstrap wysihtml5 - text editor -->
-    <link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css"/>-->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -49,7 +51,7 @@ $token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">Log in successfull</h4>
+                <h4 class="modal-title">Login Successful</h4>
             </div>
             <div class="modal-body">
                 <p>You will be redirected shortly. Please wait...</p>
@@ -63,7 +65,7 @@ $token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">Log Failed</h4>
+                <h4 class="modal-title">Login Failed</h4>
             </div>
             <div class="modal-body">
                 <p>Please Check your details</p>
@@ -90,30 +92,30 @@ $token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox"> Remember Me
-                        </label>
-                    </div>
-                </div><!-- /.col -->
                 <div class="col-xs-4">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                 </div><!-- /.col -->
             </div>
         </form>
-
-
-        <a href="#">I forgot my password</a><br>
-
-
     </div><!-- /.login-box-body -->
 </div><!-- /.login-box -->
 
+
+<!-- Bootstrap && Jquery + UI -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <!-- jQuery 2.1.3 -->
-<script src="../../plugins/jQuery/jQuery-2.1.3.min.js"></script>
+<!--<script src="../../plugins/jQuery/jQuery-2.1.3.min.js"></script>-->
 <!-- Bootstrap 3.3.2 JS -->
-<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<!--<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>-->
 <!-- iCheck -->
 <script src="../../plugins/iCheck/icheck.min.js" type="text/javascript"></script>
 <script>

@@ -1,12 +1,5 @@
 ﻿<?php
 session_start();
-
-if (isset($_POST['submit'])){
-    if (isset($_SESSION['token']) && $_POST['token'] == $_SESSION['token']){
-        echo 'Authentication working Authentication working Authentication working Authentication working';
-    }
-}
-$token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
 ?>
 
 
@@ -16,8 +9,10 @@ $token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
     <meta charset="UTF-8">
     <title>Device</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.2 -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Bootstrap 3.3.2
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- FontAwesome 4.3.0 -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
           type="text/css"/>
@@ -66,21 +61,21 @@ $token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <span class="hidden-xs"><?= $_SESSION['username'] ?></span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
                                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
                                 <p>
-                                    Alexander Pierce - Web Developer
+                                    <?= $_SESSION['username'] ?>
                                 </p>
                             </li>
 
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    <a id="logout-button" href="#" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
                         </ul>
@@ -99,7 +94,7 @@ $token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
                     <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
+                    <p><?= $_SESSION['username'] ?></p>
                 </div>
             </div>
 
@@ -159,27 +154,39 @@ $token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
                             <h3 class="box-title">Add Device</h3>
                         </div><!-- /.box-header -->
                         <!-- form start -->
-                        <form id="deviceForm" role="form" action="phpscripts/adddevice.php" method="post">
+                        <form id="deviceForm" role="form" action="phpscripts/devices.php" method="post">
                             <div class="box-body">
                                 <div class="form-group">
                                     <label>Mac Address</label>
-                                    <input id="#macaddress" type="text" name="macaddress" class="form-control"
-                                           placeholder="Mac Address">
+                                    <input id="macaddress" type="text" name="macaddress" class="form-control"
+                                           placeholder="Mac Address" maxlength="17">
                                 </div>
                                 <div class="form-group">
-                                    <label>Gate #</label>
-                                    <input id="gateno" type="text" name="gateno" class="form-control"
-                                           placeholder="Gate #">
+                                    <label>Alias</label>
+                                    <input id="alias" type="text" name="alias" class="form-control"
+                                           placeholder="Device Alias">
                                 </div>
 
 
                             </div><!-- /.box-body -->
 
                             <div class="box-footer">
-                                <input type="hidden" name="token" value="<?=$token?>">
                                 <button id="add-device" type="submit" class="btn btn-primary">Add</button>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">Devices</h3>
+                            <div class="box-body table-responsive no-padding">
+                                <table id="table-devices" class="table table-hover">
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -191,6 +198,18 @@ $token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
 </div><!-- ./wrapper -->
 <!-- Scripts -->
 <div>
+    <!-- Bootstrap && Jquery + UI -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <!-- jQuery 2.1.3 -->
     <script src="plugins/jQuery/jQuery-2.1.3.min.js"></script>
     <!-- jQuery UI 1.11.2 -->
@@ -232,6 +251,7 @@ $token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
     <script src="jQuery/postData.js" type="text/javascript"></script>
     <script src="jQuery/checklogin.js" type="text/javascript"></script>
     <script src="jQuery/logout.js" type="text/javascript"></script>
+    <script src="jQuery/devices.js" type="text/javascript"></script>
 </div>
 </body>
 </html>
