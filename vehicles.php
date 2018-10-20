@@ -257,10 +257,12 @@ session_start();
         <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
         <!-- jQuery Knob Chart -->
         <script src="plugins/knob/jquery.knob.js" type="text/javascript"></script>
-        <!-- daterangepicker -->
-        <script src="plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+
         <!-- datepicker -->
         <script src="plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+        <!-- daterangepicker -->
+        <script src="plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+
         <!-- Bootstrap WYSIHTML5 -->
         <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
         <!-- iCheck -->
