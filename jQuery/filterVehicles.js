@@ -14,7 +14,7 @@ $("#vehicle-filter").on("click", function(e){
             type: "vehicle"
         },
         success: function(data){
-            if (data != null || data !== " "){
+            if (data != null || data != ""){
                 console.log(data);
                 $("#vehicles-filter-table").html("<thead><th>Numberplate ID #</th><th>Numberplate</th><th>Timestamp</th><tbody>");
                 let vehicles = JSON.parse(data);

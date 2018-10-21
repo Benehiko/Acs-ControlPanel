@@ -30,29 +30,4 @@ $(function () {
         });
     });
 
-    $('#vehicle-filter').on('click', function () {
-        let datefrom = $("#vehicle-from").val();
-        let dateto = $("#vehicle-to").val();
-        let numberplate = $("#vehicle-numberplate").val();
-
-        let url = "http://localhost:8081/db/vehicles/";
-        if ((datefrom != null || datefrom != "") && (dateto != null || datefrom != "") && (numberplate != null || numberplate != "")) {
-            url = url + "byDateNumberplate/" + datefrom + "/" + dateto + "/" + numberplate;
-        } else if ((datefrom != null || datefrom != "") && (dateto != null || datefrom != "")) {
-            url = url + "byDate/" + datefrom + "/" + dateto;
-        } else if ((numberplate != null || numberplate != "")) {
-            url = url + "byNumberplate/" + numberplate;
-        }
-        $.ajax({
-            type: 'GET',
-            url: url,
-            success: function (d) {
-                console.log("Search for vehicle complete");
-            },
-            error: function () {
-                alert('Error adding user');
-            }
-        });
-    });
-
 });

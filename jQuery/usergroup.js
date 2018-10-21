@@ -2,7 +2,7 @@ $.ajax({
     method: "GET",
     url: "../phpscripts/usergroup.php",
     success: function (data) {
-        if (data != null || data !== "") {
+        if (data != null || data != "") {
             $("#table-usergroup").html("<thead><th>Group Name</th><th>Group Level</th></thead><tbody>");
             console.log(data);
             let obj = JSON.parse(data);
