@@ -9,7 +9,7 @@ $('#add-vehicle').on('click', function (e) {
             username: $("#fleet-user").val()
         },
         success: function (d) {
-            alert("New Vehicle Added");
+            alert("New Vehicle Added" + d);
         },
         error: function () {
             alert('Error adding vehicle');
