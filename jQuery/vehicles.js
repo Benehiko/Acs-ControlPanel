@@ -1,6 +1,7 @@
 $('#add-vehicle').on('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
+    console.log("Adding fleetvehicle: " + $("#fleet-user").val());
     $.ajax({
         type: 'POST',
         url: '../phpscripts/addvehicle.php',
