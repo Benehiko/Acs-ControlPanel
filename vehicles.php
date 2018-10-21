@@ -32,7 +32,10 @@ session_start();
     <link href="plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css"/>
 
     <!-- Timepicker -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css"
+          rel="stylesheet" type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css"
+          rel="stylesheet" type="text/css"/>
 
     <!-- Date Picker -->
     <!--<link href="plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css"/>-->
@@ -249,6 +252,7 @@ session_start();
         <!--<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>-->
 
 
+        <script src="https://momentjs.com/downloads/moment.js"></script>
         <!-- Morris.js charts -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
@@ -264,7 +268,8 @@ session_start();
         <script src="plugins/knob/jquery.knob.js" type="text/javascript"></script>
 
         <!-- datepicker -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"
+                type="text/javascript"></script>
         <!--<script src="plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>-->
         <!-- daterangepicker -->
         <!--<script src="plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>-->
