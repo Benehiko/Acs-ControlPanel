@@ -1,9 +1,11 @@
 $(function () {
 
     $('#add-vehicle').on('click', function () {
+        e.preventDefault();
+        e.stopPropagation();
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:8081/db/fleetvehicles',
+            url: '../phpscripts/addvehicle.php',
             data: {
                 numberplate: $("#registration").val(),
                 username: $("#fleet-user").val()
@@ -16,18 +18,4 @@ $(function () {
             }
         });
     });
-
-    $('#search-fleet-vehicle').on('click', function () {
-        $.ajax({
-            type: 'GET',
-            url: 'http://localhost:8081/db/fleetvehicle/byNumberplate/' + $("#fleet-numberplate").val(),
-            success: function (data) {
-                console.log("fleet vehicle search " + data);
-            },
-            error: function () {
-                alert('Error adding Device');
-            }
-        });
-    });
-
 });

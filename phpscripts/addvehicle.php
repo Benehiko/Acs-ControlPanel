@@ -1,18 +1,36 @@
 <?php
 
+ini_set('display_errors', 'On');
+if ((isset($_POST["numberplate"])) && (isset($_POST["username"])) && (!empty($_POST["numberplate"])) && (!empty($_POST["username"]))) {
 
-if ($_POST['registration'] == "" || $_POST['color'] == "" || $_POST['model'] == "") {
+    $url = "http://localhost:8081/db/fleetvehicles";
 
-    echo "error: all fields are required";
+    $curl = curl_init();
 
-} else {
+    $data = array(
+        "numberplate" => $_POST["numberplate"],
+        "username" => $_POST["username"]
+    );
 
-    echo "AddVehicle.php is being called ";
-    echo "</br>";
-    echo "</br>";
-    echo("Registration: " . $_POST["registration"]);
-    echo "</br>";
-    echo("Color: " . $_POST["color"]);
-    echo "</br>";
-    echo("Model: " . $_POST["model"]);
+    curl_setopt_array($curl, array(
+        CURLOPT_RETURNTRANSFER => 1,
+        CURLOPT_URL => $url,
+        CURLOPT_USERAGENT => 'something',
+        CURLOPT_POST => 1,
+        CURLOPT_POSTFIELDS => $data
+    ));
+
+    $msg = curl_exec($curl);
+    curl_close($curl);
+
+    if ($msg !== FALSE) {
+        echo json_encode(array(
+            "success" => true
+        ));
+    } else {
+        echo json_encode(array(
+            "success" => false
+        ));
+    }
+
 }
