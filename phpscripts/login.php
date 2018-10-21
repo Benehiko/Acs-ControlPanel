@@ -5,7 +5,7 @@ session_start();
 
 if ((isset($_POST['username'])) && (isset($_POST['password'])) && (!empty($_POST['username'])) && (!empty($_POST['password']))) {
 
-    $url = "http://178.128.139.92:8081/auth/login/website";
+    $url = "http://localhost:8081/auth/login/website";
 
     $curl = curl_init();
     $username = $_POST['username'];
