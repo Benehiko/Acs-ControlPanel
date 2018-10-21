@@ -248,7 +248,7 @@ session_start();
     <script src="dist/js/pages/dashboard.js" type="text/javascript"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js" type="text/javascript"></script>
-    <script src="jQuery/postData.js" type="text/javascript"></script>
+    <script src="jQuery/vehicles.js" type="text/javascript"></script>
     <script src="jQuery/checklogin.js" type="text/javascript"></script>
     <script src="jQuery/logout.js" type="text/javascript"></script>
     <script src="jQuery/devices.js" type="text/javascript"></script>

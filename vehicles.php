@@ -280,7 +280,7 @@ session_start();
         <!--<script src="dist/js/demo.js" type="text/javascript"></script>-->
 
         <!-- JQuery UI -->
-        <script src="jQuery/postData.js" type="text/javascript"></script>
+        <script src="jQuery/vehicles.js" type="text/javascript"></script>
         <script src="jQuery/checklogin.js" type="text/javascript"></script>
         <script src="jQuery/logout.js" type="text/javascript"></script>
         <script src="jQuery/filterVehicles.js" type="text/javascript"></script>
