@@ -30,10 +30,14 @@ session_start();
     <!--<link href="plugins/morris/morris.css" rel="stylesheet" type="text/css"/>-->
     <!-- jvectormap -->
     <link href="plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Timepicker -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css" rel="stylesheet" type="text/css"/>
+
     <!-- Date Picker -->
-    <link href="plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css"/>-->
     <!-- Daterange picker -->
-    <link href="plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>-->
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -263,10 +267,11 @@ session_start();
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js" type="text/javascript"></script>
         <!--<script src="plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>-->
         <!-- daterangepicker -->
-        <script src="plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+        <!--<script src="plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>-->
 
         <!-- Bootstrap WYSIHTML5 -->
-        <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+        <!--<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>-->
+        
         <!-- iCheck -->
         <script src="plugins/iCheck/icheck.min.js" type="text/javascript"></script>
         <!-- Slimscroll -->
@@ -281,7 +286,7 @@ session_start();
         <!--<script src="dist/js/demo.js" type="text/javascript"></script>-->
         <!-- JQuery UI -->
         <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
-        <!--<script src="http://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.js"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
 
         <script src="jQuery/postData.js" type="text/javascript"></script>
         <script src="jQuery/checklogin.js" type="text/javascript"></script>
