@@ -9,7 +9,7 @@ function loadfleetUser() {
                 let tmp = JSON.parse(data);
                 let users = JSON.parse(tmp["users"]);
                 for (u in users) {
-                    $("#fleet-user").append("<option value=" + users[u].id + ">" + users[u].username + "</option>");
+                    $("#fleet-user").append("<option selected='selected' value=" + users[u].id + ">" + users[u].username + "</option>");
                 }
             }
         }
