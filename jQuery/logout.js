@@ -6,7 +6,7 @@ $("#logout-button").on("click", function(e){
         method: "GET",
         url:"../phpscripts/logout.php",
         success: function(data){
-            window.location.replace("http://178.128.139.92");
+            window.location.replace("http://192.168.1.108");
         }
     })
 });
