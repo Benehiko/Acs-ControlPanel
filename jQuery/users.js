@@ -3,7 +3,7 @@ function loadfleetUser() {
         method: "GET",
         url: "../phpscripts/getusers.php",
         success: function (data) {
-            if (data != null || data != "") {
+            if (data != null || data != " ") {
                 $("#fleet-user").html("");
                 console.log("Data from getUsers: " + data);
                 let tmp = JSON.parse(data);
