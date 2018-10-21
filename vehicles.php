@@ -270,8 +270,8 @@ session_start();
         <!--<script src="plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>-->
 
         <!-- Bootstrap WYSIHTML5 -->
-        <!--<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>-->
-        
+        <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+
         <!-- iCheck -->
         <script src="plugins/iCheck/icheck.min.js" type="text/javascript"></script>
         <!-- Slimscroll -->
