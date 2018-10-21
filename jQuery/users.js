@@ -5,6 +5,7 @@ function loadfleetUser() {
         success: function (data) {
             if (data != null || data !== "") {
                 $("#fleet-user").html("");
+                console.log("Data from getUsers: " + data);
                 let tmp = JSON.parse(data);
                 let users = JSON.parse(tmp["users"]);
                 for (u in users) {
@@ -55,7 +56,7 @@ $("#search-user").on("click", function (e) {
             let obj = JSON.parse(data);
             let user = JSON.parse(obj[0]);
 
-            for (i in user){
+            for (i in user) {
                 let id = user[i].userId;
                 let firstname = user[i].firstname;
                 let lastname = user[i].lastname;
